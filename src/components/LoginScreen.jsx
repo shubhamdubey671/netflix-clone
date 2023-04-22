@@ -4,10 +4,37 @@ import login from "../assets/login.jpg";
 import right_arrow_angle from "../assets/right-arrow-angle.png";
 import SignupScreen from "./SignupScreen";
 import "../style/loginScreen.scss";
+import { signInWithPopup, GoogleAuthProvider } from "firebase/auth";
+import { auth } from "../firebase.js";
+import { useNavigate } from "react-router-dom";
+
+
+
 
 
 const LoginScreen = () => {
   const [signIn, setSignIn] = useState(false);
+  const provider = new GoogleAuthProvider();
+  const navigate = useNavigate();
+  const SigninWithGoogle =()=>{
+
+  
+    signInWithPopup(auth, provider)
+  .then((result) => {
+    const user = result.user;
+    console.log(user);
+   
+     }).then((authUser) => {
+      navigate("/home");
+      
+    })
+     
+     
+     .catch((error) => {
+      alert(error.message);
+     })};
+  
+
 
   return (
     <div className="LoginScreen">
@@ -15,18 +42,16 @@ const LoginScreen = () => {
         <img
           className="loginBackgroundImage"
           src={login}
-          centre
-          no-repeat
+          // centre
+          // no-repeat
           alt="login screen"
         />
         <div className="loginscreen_gradient" />
         <button
           className="loginscreen_button"
-          onClick={() => {
-            setSignIn(true);
-          }}
+          onClick={SigninWithGoogle}
         >
-          Sign In
+          Sign Up
         </button>
         <img className="loginscreen_logo" src={logo} alt="" />
       </div>

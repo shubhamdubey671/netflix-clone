@@ -66,10 +66,15 @@
     color: grey;
 }
 
+.signUpScreen_link{
+    color: grey;
+}
+
 .signUpScreen_link:hover{
 
     cursor: pointer;
     text-decoration: underline;
+     
 }
 
 .capture{
@@ -81,4 +86,21 @@
     line-height: normal;
     color: #8c8c8c;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif
+}
+
+
+
+@media screen and (max-width: 820px){
+    .SignupScreen{
+
+    padding: 60px;
+    width: 60%;
+    top: -75px;
+    height: 50vh;
+    // height: 60%;
+    position: relative;
+    border-radius: 7px;
+    background: rgba(0,0,0,0.85) ;  
+
+    }
 }

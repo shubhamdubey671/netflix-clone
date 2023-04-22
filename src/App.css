@@ -9,4 +9,18 @@
 
 body {
   /* overflow: hidden; Hide scrollbars */
+  background-color: #111;
+}
+
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+::-webkit-scrollbar-button {
+  display: none;
+}
+
+body {
+  -ms-overflow-style:none;
 }

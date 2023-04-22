@@ -1,12 +1,12 @@
 import { createSlice } from "@reduxjs/toolkit";
-// import { fetchCount } from './counter/counterAPI';
+
 
 export const userSlice = createSlice({
   name: "user  ",
   initialState: {
     user: null,
   },
-  // The `reducers` field lets us define reducers and generate associated actions
+  
   reducers: {
     login: (state, action) => {
       state.user = action.payload;
